@@ -1,0 +1,121 @@
+/* ========================================================================= */
+/* グローバル・共通スタイル (全てのページに適用される基本設定) */
+/* ========================================================================= */
+
+body {
+    font-family: 'Noto Sans JP', sans-serif; /* Google Fontsなど、日本語フォントを指定するとより良い */
+    background-color: #e9ecef; /* 淡いグレーの背景 */
+    min-height: 100vh; /* 画面の高さ全体を占める */
+    display: flex;
+    flex-direction: column; /* 要素を縦に並べる */
+    justify-content: center; /* 垂直方向中央寄せ */
+    align-items: center;     /* 水平方向中央寄せ */
+    padding: 20px; /* 全体的なパディング */
+    margin: 0; /* bodyのデフォルトマージンをリセット */
+}
+
+/* フッターの共通スタイル */
+footer {
+    margin-top: auto; /* コンテンツが短くてもフッターを常に下部に配置 */
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+    color: #6c757d;
+    font-size: 0.9em;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 子要素を水平中央寄せ */
+    gap: 5px; /* 要素間の隙間 */
+}
+
+.social-links a {
+    color: #6c757d; /* アイコンの色 */
+    font-size: 1.5em; /* アイコンのサイズ */
+    margin: 0 10px;
+    transition: color 0.3s ease; /* ホバー時のアニメーション */
+}
+
+.social-links a:hover {
+    color: #007bff; /* ホバー時の色 (Bootstrapのprimaryカラー) */
+}
+
+
+/* ========================================================================= */
+/* index.html 専用スタイル (メインページのデザイン) */
+/* ========================================================================= */
+
+.main-card {
+  max-width: 600px;
+  width: 100%;
+  padding: 30px;
+  margin: 20px auto; /* 上下20px、左右autoで中央寄せ */
+  text-align: center;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.hero-image {
+  max-width: 80%;
+  height: auto;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+
+/* ========================================================================= */
+/* sign.html 専用スタイル (認識ページのデザイン) */
+/* ========================================================================= */
+
+.sign-main-card {
+  max-width: 720px;
+  width: 100%;
+  padding: 30px;
+  margin: 20px auto; /* 中央寄せ */
+  text-align: center;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 640px;
+    margin: 0 auto;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 4:3のアスペクト比を維持するためのトリック (幅640px, 高さ480pxの場合) */
+.pb-3-4 {
+    padding-bottom: 75%; /* 480 / 640 = 0.75 = 75% */
+    height: 0; /* padding-bottomで高さを設定するので高さを0にする */
+    position: relative; /* 子要素のabsoluteの基準点 */
+}
+
+.input-video, .output-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* 親要素のpadding-bottomで高さが設定されているため */
+    transform: scaleX(-1); /* 左右反転 (鏡像) */
+}
+
+.output-canvas {
+    z-index: 2; /* ビデオの上に描画 */
+}
+
+.input-video {
+    z-index: 1; /* ビデオが下 */
+}
+
+/* デバッグ情報エリアの初期表示を非表示にするためのCSS */
+#debug_info {
+    display: none;
+}
