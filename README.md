@@ -77,4 +77,11 @@
     * **所属**: 筑波技術大学 大学院 技術科学研究科
     * **ポートフォリオ**: [https://kisetu-ggwp.github.io/portfolio/]
 
+## ライセンス (License)
+
+このプロジェクトは、MITライセンスのもとで公開されています。
+詳細は、LICENSE.txtをご覧ください。
+
+This project is licensed under the MIT License, see the LICENSE.txt file for details.
+
 ---
